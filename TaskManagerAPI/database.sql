@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS TaskManagerDB;
+USE TaskManagerDB;
+
+CREATE TABLE Users (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL,
+    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_username (Username),
+    INDEX idx_email (Email)
+);
+
+CREATE TABLE Tasks (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Title VARCHAR(200) NOT NULL,
+    Description VARCHAR(1000),
+    IsCompleted BOOLEAN DEFAULT FALSE,
+    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CompletedAt DATETIME NULL,
+    UserId INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id) ON DELETE CASCADE,
+    INDEX idx_user_id (UserId)
+);
