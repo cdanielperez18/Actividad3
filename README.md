@@ -18,36 +18,36 @@ Este proyecto demuestra la implementación de una arquitectura completa tipo Baa
 
 ```
 ┌─────────────────────┐
-│ Angular 21 │
-│ (Frontend SPA) │
-│ │
-│ - Login/Register │
-│ - AuthGuard │
-│ - AuthInterceptor │
-│ - Task CRUD │
+│ Angular 21          │
+│ (Frontend SPA)      │
+│                     │
+│ - Login/Register    │
+│ - AuthGuard         │
+│ - AuthInterceptor   │
+│ - Task CRUD         │
 └──────────┬──────────┘
 │
 │ HTTP Request/Response
 │ Authorization: Bearer {JWT}
 ↓
 ┌─────────────────────┐
-│ ASP.NET Core 8.0 │
-│ (Backend API) │
-│ │
-│ - JWT Auth │
-│ - Controllers │
-│ - Services │
-│ - Repositories │
+│ ASP.NET Core 8.0    │
+│ (Backend API)       │
+│                     │
+│ - JWT Auth          │
+│ - Controllers       │
+│ - Services          │
+│ - Repositories      │
 └──────────┬──────────┘
 │
 │ Entity Framework Core
 ↓
 ┌─────────────────────┐
-│ MySQL 8.0 │
-│ (Database) │
-│ │
-│ - Users │
-│ - Tasks │
+│ MySQL 8.0           │
+│ (Database)          │
+│                     │
+│ - Users             │
+│ - Tasks             │
 └─────────────────────┘
 ```
 
@@ -155,16 +155,16 @@ CREATE TABLE Tasks (
 );
 ```
 
-    Verificar que la base de datos TaskManagerDB se haya creado correctamente
+Verificar que la base de datos TaskManagerDB se haya creado correctamente
 
 ### Paso 2: Configurar y Ejecutar Backend
 
-    Navegar a la carpeta del backend:
+Navegar a la carpeta del backend:
 ```
 cd TaskManagerAPI
 ```
 
-    Configurar appsettings.json:
+Configurar appsettings.json:
 ```
 {
   "ConnectionStrings": {
@@ -179,29 +179,29 @@ cd TaskManagerAPI
 }
 ```
 
-    Restaurar dependencias y ejecutar:
+Restaurar dependencias y ejecutar:
 ```
 dotnet restore
 dotnet run
-
 ```
+
 Verificar que el servidor esté disponible en http://localhost:5071
 
 ### Paso 3: Configurar y Ejecutar Frontend
 
 En una terminal separada:
 
-    Navegar a la carpeta del frontend:
+Navegar a la carpeta del frontend:
 ```
 cd task-manager-app
 ```
 
-    Instalar dependencias:
+Instalar dependencias:
 ```
 npm install
 ```
 
-    Ejecutar en modo desarrollo:
+Ejecutar en modo desarrollo:
 ```
 ng serve
 ```
